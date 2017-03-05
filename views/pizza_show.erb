@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+	<script type='text/javascript' >
+			$(function () {
+			$('[data-toggle="popover"]').popover()
+		})
+	</script>
+</head>
+<body>
+<div class="row">
+<% @pizza.each do |x| %>
+
+	<div class="col-sm-6 col-md-4">
+		<div class="thumbnail">
+			<!-- <small class="time"><span class="glyphicon glyphicon-time" aria-hidden="true" ></span> Добавлена:<%= x.created_at%></small> -->
+			<img class="img-rounded" src="<%= x.path_to_img %>" alt="...">
+
+			<div class='row'>
+
+					<div class="caption col-md-6">
+						<div class='title'><h4><%= x.title %></h4></div>
+
+						<div class='description'>
+							<%=x.description %>
+						</div>
+
+						<div class='buy_and_more_buttons'>
+							<a href="#" class="btn btn-primary" role="button">Купить</a>
+							<a href="#" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="<%= x.description %>" role="button">Подробнее</a>
+						</div>
+					</div>
+
+					<!-- <div class='caption2 col-md-1'></div> -->
+
+						<div class='pizza_size_and_price col-md-5' align='justify'>
+								<p>
+									Доступные размеры
+								</p>
+								<p>
+								<img src='/img/diam_img.png'>
+								&nbsp<%=x.size%>
+								<span>см</span>
+								<img src='/img/rubles2.png'>
+								<%=x.price%><p />
+								<p>
+								<img src='/img/diam_img.png'>
+								&nbsp<%=x.size%>
+								<span>см</span>
+								<img src='/img/rubles2.png'>
+								<%=x.price%><p />
+								<p>
+								<img src='/img/diam_img.png'>
+								&nbsp<%=x.size%>
+								<span>см</span>
+								<img src='/img/rubles2.png'>
+								<%=x.price%>
+
+						</div>
+					</div>
+
+				</div>
+
+		</div>
+<% end %>
+</div>
+</body>
+</html>
