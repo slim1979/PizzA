@@ -26,11 +26,21 @@ before '/secure/*' do
   end
 end
 
+before do
+    @pizza=Product.all
+end
+
 get '/' do
   erb :index
 end
+
 get '/about' do
   erb :about
+end
+
+get '/pizza' do
+
+erb :pizza_show
 end
 
 get '/login/form' do
