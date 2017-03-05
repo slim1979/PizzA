@@ -1,0 +1,64 @@
+.popover, .fade, .top, .in{
+	/*background-color: grey;*/
+	font-family: Arial;
+	/*font-family: sans-serif;*/
+	/*color: red;*/
+}
+
+.img-rounded {
+  max-width:auto;
+  max-height: 212px;
+}
+.title{
+	height: 20px;
+
+}
+.pizza_size_and_price img{
+	position: relative;
+	width:15px;
+	top: -2px;
+}
+
+.pizza_size_and_price p{
+	font-family: 'Lobster', cursive;
+}
+
+.pizza_size_and_price {
+	position: relative;
+	z-index: 1;
+	font-size: 12px;
+	left: 200px;
+	text-align: right;
+	/*border: 1px solid black;*/
+	padding: 10px;
+	padding-top: 22px;
+	margin: 0;
+}
+
+.caption {
+	position: absolute;;
+	z-index: 0;
+	height:150px;
+	margin-left: 20px;
+	/*border: 1px solid black;*/
+	font-family: 'Lobster', cursive;
+}
+
+.description{
+	margin-top: 5px;
+	height: 45px;
+	font-size: 10px;
+	color: grey;
+	font-family: 'Arial', cursive;
+	/*border: 1px solid black;*/
+}
+
+.time {
+  font-size: 10px;
+  color: grey;
+}
+
+.thumbnail {
+  height: 360px;
+	border: none;
+}
