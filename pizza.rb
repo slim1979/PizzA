@@ -1,6 +1,12 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
+require 'sinatra/activerecord'
+
+set :database, "sqlite3:pizza.db"
+
+class Product < ActiveRecord::Base
+end
 
 configure do
   enable :sessions
@@ -30,14 +36,14 @@ end
 get '/login/form' do
 
 		erb :login_form
-  
+
 end
 
 post '/login/attempt' do
 
 	@login = params[:username]
 	@password = params[:user_password]
-	
+
 	if @login == 'admin' && @password == 'secret'
 		session[:identity] = params[:username]
 		erb :welcome
@@ -46,8 +52,8 @@ post '/login/attempt' do
 		@message = "Access denied"
 		where_user_came_from = session[:previous_url] || '/'
 		redirect to where_user_came_from
-	end   
-   
+	end
+
 end
 
 get '/logout' do
